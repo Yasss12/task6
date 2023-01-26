@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center"> Hello! </h1>
+    <h2 align="center">TASK1</h2> 
+
+    <script>
+const etudiants = [
+    { name : "sarah" , note : undefined },
+    { name : "monya" , note : 7 },
+    { name : "carlos" , note : 13 },
+    { name : "fadhel" , note : 18 },
+    ];
+
+function FailedStudent (x){
+    let classe = x.filter(function Defined(elt){
+            if(elt.note !=undefined){
+                return elt
+            };
+        });
+    classe.sort(function(a,b){
+        return(b.note-a.note);
+    });
+        
+    let total = classe.reduce(function(acc,val){
+        return( acc+val.note);
+    
+    },0);
+    let long = classe.reduce(function(acc,val){
+        return( acc+1);
+    
+    },0);
+    let moyenne = total/long;
+    let newclasse = classe.map(function(student){
+        if (student.note>=moyenne){
+            student.mention="Bien";
+        }
+        else student.mention="Passable";
+        return student;
+    });
+    return(newclasse);
+    };
+    
+console.log(FailedStudent (etudiants));
+    </script>
+</body>
+</html>

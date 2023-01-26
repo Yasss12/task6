@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <h1 align="center"> Hello! </h1>
+    <h2 align="center">TASK3</h2>
+
+    <script>    
+const users = [
+    { name : "sarah" , comment : "j'aime ce poste <3" },
+    { name : "monya" , comment : "le poste est null :( " },
+    { name : "carlos" , comment : "salut l'algérie" }
+    ];
+
+
+function MoodDetect(l){
+    let l1=users.map(function(user){
+        newliste={};
+        newliste.name=user.name;
+        if(user.comment.includes("aime") || user.comment.includes("<3") ){
+            newliste.etat="heureux";
+        }
+        else if(user.comment.includes("deteste") || user.comment.includes("null") || user.comment.includes(":(") ){
+            newliste.etat="triste";
+        }
+        else  newliste.etat="neutre";
+        return(newliste);
+
+    });
+    return(l1);  
+};
+console.log(MoodDetect(users));
+    </script>
+</body>
+</html>

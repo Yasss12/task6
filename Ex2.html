@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center"> Hello! </h1>
+    <h2 align="center">TASK2</h2>
+<script>
+const str1 = 'ahmed&ferah-moez&saadi-fadhel&gadihi';
+    
+    function FormatToArray( ch ){
+        let ch1 = ch.split("-");
+        //console.log(ch1);
+        let ch2 = ch1.map(function(x){
+        //console.log(x);
+        ch3 = x.split("&");
+        newobj={};
+        newobj.firstname=ch3[0];
+        newobj.lastname=ch3[1];
+        return(newobj);
+        //console.log(newobj);
+
+        });
+           
+        return(ch2) ;  
+              
+    };
+    
+    console.log(FormatToArray(str1));</script>
+</body>
+</html>
